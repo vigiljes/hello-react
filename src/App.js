@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React wit ME and MSU boishech is it like thaat???!
+          Learn React wit ME and MSU boishech is it like thaaaaaaat???!
         </a>
       </header>
     </div>
