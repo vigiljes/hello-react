@@ -21,7 +21,7 @@ function Library() {
   // Below is what displays when you use <Library />
   return (
     <>
-    <table style={{color: 'green', fontFamily: 'monospace', width: '10px', fontWeight: '100'}}>
+    <table style={{color: 'green', fontFamily: 'monospace', width: '8px', fontWeight: '100'}}>
     {
       myBooks.map(b => (
         <tr>
