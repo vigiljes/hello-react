@@ -1,6 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+function TestyourMight(){
+  return(
+    <>
+    <h3>Test your might!!</h3>
+    <button>SMASH!</button>
+    </>
+  );
+}
+
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +28,7 @@ function App() {
           Learn React wit ME and MSU boishe is it like thaaaaaaat???!
         </a>
       </header>
+      <TestyourMight/>
     </div>
   );
 }
