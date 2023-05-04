@@ -1,5 +1,40 @@
+import {useState} from 'react';
+import {supabase} from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
+
+
+function Library() {
+  // The useState hook lets us store data in a component across renders
+  // setMyBooks is a setter function that updates the state of myBooks
+  const [myBooks, setMyBooks] = useState([]);
+  // This should look familar from Codepen
+  async function getBooks() {
+    let { data: books, error } = await supabase
+      .from('books')
+      .select('*')
+    // Update the state
+    setMyBooks(books);
+  }
+  // Execute the function
+  getBooks();
+  // Below is what displays when you use <Library />
+  return (
+    <>
+    <table style={{color: 'green', fontFamily: 'monospace', width: '10px', fontWeight: '100'}}>
+    {
+      myBooks.map(b => (
+        <tr>
+          <td>{b.title}</td>
+          <td>{b.author}</td>
+          <td>{b.isbn}</td>
+        </tr>
+      ))
+    }
+    </table>
+    </>
+  )
+}
 
 
 const albums = {
@@ -54,8 +89,18 @@ function Shoebox() {
 }
 
 function WowowWutton() {
+
+  const[count, setCount] = useState(0);
+
+  function smeesh (){
+    setCount(count + 1);
+  }
+
   return(
-    <button>SMASH!</button>
+    <>
+    <h3>Test your Might!</h3>
+    <button onClick={smeesh}>SMASHED {count} Times!</button>
+    </>
   );
 }
 
@@ -83,6 +128,7 @@ function App() {
         >
           Learn React wit ME and MSU boishe is it like thaat???!
         </a>
+        <Library />
         <Shoebox />
         <MoopSchnoop />
         <ReturnofCraet />
